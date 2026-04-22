@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temple Stephen | Cloud & DevOps</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1a2f;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    animation: fadeInDown 1s ease;
+}
+
+p {
+    color: #ccc;
+}
+
+.section {
+    margin-top: 70px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: #1e3a5f;
+    padding: 10px 15px;
+    margin: 6px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: #2ea6ff;
+    transform: scale(1.1);
+}
+
+/* PROJECTS */
+.project {
+    background: #13294b;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 420px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background: #2ea6ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1b7fcc;
+    transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>👋 Hi, I'm Temple</h1>
+    <p>Cloud & DevOps Engineer in training ☁️🚀</p>
+
+    <!-- ABOUT -->
+    <div class="section">
+        <h2>👨‍💻 About Me</h2>
+        <p>
+            I am building hands-on experience in cloud engineering, deployment,
+            and automation. My goal is to become a production-ready DevOps Engineer.
+        </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <h2>⚙️ Skills</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>Cloudflare</span>
+            <span>Docker</span>
+            <span>AWS</span>
+            <span>GitHub</span>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+        <h2>🚀 Projects</h2>
+
+        <div class="project">
+            <h3>🌐 Portfolio Website</h3>
+            <p>Live personal website deployed on Cloudflare.</p>
+            <a class="btn" href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank">
+                View Live Site
+            </a>
+        </div>
+
+        <div class="project">
+            <h3>📦 GitHub Projects</h3>
+            <p>My code, experiments, and DevOps learning journey.</p>
+            <a class="btn" href="https://github.com/templestephen" target="_blank">
+                View GitHub
+            </a>
+        </div>
+
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+        <h2>📞 Contact</h2>
+        <p>Email: temple.stephen100@email.com</p>
+
+        <a class="btn" href="https://github.com/templestephen" target="_blank">🐙 GitHub</a>
+        <a class="btn" href="https://x.com/templestephen" target="_blank">𝕏 X</a>
+    </div>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
