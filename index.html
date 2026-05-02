@@ -209,6 +209,21 @@
         margin: 22px 0 0;
     }
 
+    .deploy-check {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(240, 181, 74, 0.28);
+        background: rgba(240, 181, 74, 0.12);
+        color: #ffe3a6;
+        font-weight: 700;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .deploy-check strong {
+        color: #fff3cf;
+    }
+
     .hero-actions {
         display: flex;
         flex-wrap: wrap;
@@ -719,6 +734,10 @@
                 systems that feel dependable, repeatable, and production-minded.
             </p>
 
+            <div class="deploy-check">
+                <strong>Deployment Verification Build:</strong> May 2, 2026 - webhook deployment test is live.
+            </div>
+
             <div class="hero-actions">
                 <a class="button button-primary" href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank" rel="noopener noreferrer">
                     <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -968,7 +987,7 @@ status      learning by building
 </main>
 
 <footer class="site-footer shell">
-    <p>&copy; <span id="year"></span> Temple Stephen. Built for clear presentation and steady iteration.</p>
+    <p>&copy; <span id="year"></span> Temple Stephen. Deployment verification build: May 2, 2026.</p>
 </footer>
 
 <script>
@@ -1025,4 +1044,4 @@ status      learning by building
     updateActiveNav();
 </script>
 </body>
-</html> 
+</html>
