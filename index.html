@@ -298,6 +298,41 @@
     .hero-visual {
         display: grid;
         gap: 16px;
+    }.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(53, 208, 196, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 1080px) {
+    .profile-image img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 760px) {
+    .profile-image {
+        margin-bottom: 24px;
+    }
+
+    .profile-image img {
+        width: 220px;
+        height: 220px;
     }
 
     .terminal,
@@ -751,7 +786,12 @@
         </div>
 
         <div class="hero-visual" data-reveal>
-            <div class="terminal" aria-hidden="true">
+
+    <div class="profile-image">
+        <img src="website.png" alt="Temple Stephen">
+    </div>
+
+    <div class="terminal" aria-hidden="true">
                 <div class="window-bar">
                     <span></span>
                     <span></span>
