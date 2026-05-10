@@ -3,595 +3,688 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Temple Stephen is a cloud and DevOps engineer in training, building hands-on experience with deployment, automation, and modern infrastructure.">
-
-<title>Temple Stephen | Cloud & DevOps Engineer</title>
+<title>Temple Stephen | Cloud &amp; DevOps Engineer</title>
 
 <script>
 document.documentElement.classList.add("js");
 </script>
 
 <style>
-
-:root{
+:root {
     color-scheme: dark;
-    --bg:#0f1314;
-    --surface:#171d1f;
-    --surface-strong:#1f282a;
-    --border:rgba(255,255,255,0.08);
-    --text:#f4f7f7;
-    --muted:#a9b5b6;
-    --accent:#35d0c4;
-    --accent-soft:rgba(53,208,196,0.12);
-    --warm:#f0b54a;
-    --shadow:0 24px 48px rgba(0,0,0,0.22);
-    --shell-width:1180px;
+    --bg: #0f1314;
+    --surface: #171d1f;
+    --surface-strong: #1f282a;
+    --border: rgba(255,255,255,0.08);
+    --text: #f4f7f7;
+    --muted: #a9b5b6;
+    --accent: #35d0c4;
+    --accent-soft: rgba(53,208,196,0.12);
+    --warm: #f0b54a;
+    --shadow: 0 24px 48px rgba(0,0,0,0.22);
+    --shell-width: 1180px;
 }
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    margin:0;
-    font-family:Inter,"Segoe UI",Arial,sans-serif;
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
     background:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(180deg,#101516 0%,#0f1314 100%);
-    background-size:48px 48px,48px 48px,auto;
-    color:var(--text);
-    line-height:1.6;
+        linear-gradient(180deg, #101516 0%, #0f1314 100%);
+    background-size: 48px 48px, 48px 48px, auto;
+    color: var(--text);
+    line-height: 1.6;
 }
 
-a{
-    color:inherit;
+a {
+    color: inherit;
 }
 
 img,
-svg{
-    display:block;
-    max-width:100%;
+svg {
+    display: block;
+    max-width: 100%;
 }
 
-.shell{
-    width:min(var(--shell-width), calc(100% - 32px));
-    margin:0 auto;
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -48px;
+    z-index: 100;
+    background: var(--text);
+    color: #101516;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-/* HEADER */
-
-.site-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    backdrop-filter:blur(14px);
-    background:rgba(15,19,20,0.82);
-    border-bottom:1px solid var(--border);
+.skip-link:focus {
+    top: 16px;
 }
 
-.header-inner{
-    min-height:76px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-    padding:14px 0;
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-.brand{
-    display:inline-flex;
-    align-items:center;
-    gap:14px;
-    text-decoration:none;
+.shell {
+    width: min(var(--shell-width), calc(100% - 32px));
+    margin: 0 auto;
 }
 
-.brand-mark{
-    width:44px;
-    height:44px;
-    border-radius:8px;
-    display:grid;
-    place-items:center;
-    background:linear-gradient(135deg,var(--accent) 0%,#78e2d8 100%);
-    color:#0d1112;
-    font-weight:800;
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(14px);
+    background: rgba(15,19,20,0.82);
+    border-bottom: 1px solid var(--border);
 }
 
-.brand-text{
-    display:grid;
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
 }
 
-.brand-text strong{
-    font-size:1rem;
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
 }
 
-.brand-text span{
-    color:var(--muted);
-    font-size:0.92rem;
+.brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--accent) 0%, #78e2d8 100%);
+    color: #0d1112;
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }
 
-.site-nav{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+.brand-text {
+    display: grid;
+    gap: 2px;
 }
 
-.site-nav a{
-    text-decoration:none;
-    color:var(--muted);
-    padding:8px 10px;
-    border-radius:8px;
-    transition:0.2s ease;
+.brand-text strong {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.brand-text span {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .site-nav a:hover,
-.site-nav a.active{
-    color:var(--text);
-    background:rgba(255,255,255,0.06);
+.site-nav a.active {
+    color: var(--text);
+    background: rgba(255,255,255,0.06);
 }
 
-/* HERO */
-
-.hero{
-    display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:36px;
-    align-items:center;
-    padding:52px 0 84px;
-    min-height:calc(100vh - 76px);
+main {
+    overflow: hidden;
 }
 
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:18px;
-    padding:8px 12px;
-    border:1px solid rgba(53,208,196,0.2);
-    background:var(--accent-soft);
-    color:#a4f2eb;
-    border-radius:999px;
-    font-size:0.92rem;
-    font-weight:600;
+.hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    padding: 52px 0 84px;
+    min-height: calc(100vh - 76px);
 }
 
-.hero h1{
-    font-size:3.7rem;
-    line-height:1.08;
-    margin:0;
-    max-width:12ch;
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding: 8px 12px;
+    border: 1px solid rgba(53,208,196,0.2);
+    background: var(--accent-soft);
+    color: #a4f2eb;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
 }
 
-.lede{
-    color:var(--muted);
-    font-size:1.05rem;
-    max-width:62ch;
-    margin-top:22px;
+.hero h1,
+.section-heading h2,
+.contact-band h2 {
+    margin: 0;
+    line-height: 1.08;
+    font-weight: 800;
 }
 
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:28px;
+.hero h1 {
+    font-size: 3.7rem;
+    max-width: 12ch;
 }
 
-.button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    min-height:48px;
-    padding:0 18px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.2s ease;
+.hero-copy .lede,
+.about-copy p,
+.project-card p,
+.roadmap-card p,
+.contact-band p,
+.stack-card p,
+.signal-card p,
+.detail-card p {
+    color: var(--muted);
+    font-size: 1.05rem;
 }
 
-.button:hover{
-    transform:translateY(-2px);
+.hero-copy .lede {
+    max-width: 62ch;
+    margin: 22px 0 0;
 }
 
-.button-primary{
-    background:var(--accent);
-    color:#0f1314;
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
 }
 
-.button-secondary{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,0.04);
+.button,
+.link-row a,
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.hero-points{
-    list-style:none;
-    padding:0;
-    margin-top:30px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
+.button:hover,
+.link-row a:hover,
+.project-links a:hover {
+    transform: translateY(-2px);
 }
 
-.hero-points li{
-    padding:18px;
-    background:rgba(255,255,255,0.04);
-    border:1px solid var(--border);
-    border-radius:8px;
+.button-primary {
+    background: var(--accent);
+    color: #0f1314;
 }
 
-.hero-points span{
-    color:var(--muted);
-    font-size:0.94rem;
+.button-primary:hover {
+    background: #57ddd2;
 }
 
-.hero-visual{
-    display:grid;
-    gap:16px;
+.button-secondary,
+.project-links a,
+.link-row a {
+    border-color: var(--border);
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
 }
 
-/* PROFILE IMAGE */
-
-.profile-image{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.button-secondary:hover,
+.project-links a:hover,
+.link-row a:hover {
+    background: rgba(255,255,255,0.08);
 }
 
-.profile-image img{
-    width:340px;
-    height:340px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid rgba(53,208,196,0.2);
-    box-shadow:0 20px 40px rgba(0,0,0,0.35);
-    transition:transform 0.3s ease;
+.hero-points {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
 }
 
-.profile-image img:hover{
-    transform:scale(1.03);
+.hero-points li {
+    min-height: 112px;
+    padding: 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
 }
 
-/* CARDS */
+.hero-points strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
 
+.hero-points span {
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.hero-visual {
+    display: grid;
+    gap: 16px;
+}
+
+.profile-frame,
 .terminal,
 .signal-card,
 .project-card,
 .stack-card,
 .roadmap-card,
-.detail-card{
-    background:linear-gradient(
+.detail-card {
+    background: linear-gradient(
         180deg,
         rgba(255,255,255,0.045) 0%,
         rgba(255,255,255,0.025) 100%
     );
-    border:1px solid var(--border);
-    border-radius:8px;
-    box-shadow:var(--shadow);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
-/* TERMINAL */
-
-.terminal{
-    overflow:hidden;
+.profile-frame {
+    padding: 24px;
 }
 
-.window-bar{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    min-height:46px;
-    padding:0 18px;
-    background:rgba(255,255,255,0.035);
-    border-bottom:1px solid var(--border);
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.window-bar span{
-    width:10px;
-    height:10px;
-    border-radius:50%;
+.profile-image img {
+    width: min(340px, 100%);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(53,208,196,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease;
 }
 
-.window-bar span:nth-child(1){
-    background:#ff7b72;
+.profile-image img:hover {
+    transform: scale(1.03);
 }
 
-.window-bar span:nth-child(2){
-    background:#f0b54a;
+.terminal {
+    overflow: hidden;
 }
 
-.window-bar span:nth-child(3){
-    background:#35d0c4;
+.window-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 18px;
+    background: rgba(255,255,255,0.035);
+    border-bottom: 1px solid var(--border);
 }
 
-.terminal-body{
-    padding:22px;
+.window-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
-.terminal-body pre{
-    margin:0;
-    color:#d5e0e1;
-    font-family:Consolas, monospace;
-    white-space:pre-wrap;
+.window-bar span:nth-child(1) {
+    background: #ff7b72;
 }
 
-/* SIGNALS */
-
-.signals{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
+.window-bar span:nth-child(2) {
+    background: #f0b54a;
 }
 
-.signal-card{
-    padding:18px;
+.window-bar span:nth-child(3) {
+    background: #35d0c4;
 }
 
-.signal-label{
-    display:block;
-    margin-bottom:12px;
-    color:var(--warm);
-    font-size:0.86rem;
-    font-weight:700;
-    text-transform:uppercase;
+.terminal-body {
+    padding: 22px;
 }
 
-/* SECTIONS */
-
-.section{
-    padding:40px 0 88px;
+.terminal-body pre {
+    margin: 0;
+    color: #d5e0e1;
+    font-family: Consolas, monospace;
+    white-space: pre-wrap;
 }
 
-.section-heading{
-    margin-bottom:28px;
+.signals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
-.section-heading h2{
-    font-size:2.35rem;
-    margin:0;
+.signal-card {
+    min-height: 124px;
+    padding: 18px;
 }
 
-.section-heading p{
-    color:var(--muted);
+.signal-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--warm);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-/* ABOUT */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1.2fr 0.8fr;
-    gap:24px;
+.section {
+    padding: 40px 0 88px;
 }
 
-.about-copy p{
-    color:var(--muted);
-    margin-bottom:18px;
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 28px;
 }
 
-.detail-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
+.section-heading h2,
+.contact-band h2 {
+    font-size: 2.35rem;
 }
 
-.detail-card{
-    padding:20px;
+.section-heading p {
+    margin: 0 0 14px;
+    color: var(--muted);
 }
 
-/* STACK */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+}
 
+.about-copy {
+    padding-right: 12px;
+}
+
+.about-copy p {
+    margin: 0 0 18px;
+    max-width: 68ch;
+}
+
+.detail-grid,
 .stack-grid,
 .projects-grid,
-.roadmap-grid{
-    display:grid;
-    gap:16px;
+.roadmap-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-card,
+.stack-card,
+.project-card,
+.roadmap-card {
+    padding: 20px;
+}
+
+.detail-card h3,
+.stack-card h3,
+.project-card h3,
+.roadmap-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
 }
 
 .stack-grid,
-.roadmap-grid{
-    grid-template-columns:repeat(3,1fr);
+.roadmap-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.projects-grid{
-    grid-template-columns:repeat(2,1fr);
+.projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.stack-card,
-.project-card,
-.roadmap-card{
-    padding:20px;
+.chip-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.chip-list{
-    list-style:none;
-    padding:0;
-    margin-top:14px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+.chip-list li {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #deebec;
 }
 
-.chip-list li{
-    padding:8px 12px;
-    border-radius:999px;
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.1);
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 100%;
 }
 
-.project-tag{
-    display:inline-flex;
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(240,181,74,0.12);
-    border:1px solid rgba(240,181,74,0.22);
-    color:#ffd98d;
-    font-size:0.86rem;
-    font-weight:700;
+.project-tag {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(240,181,74,0.12);
+    border: 1px solid rgba(240,181,74,0.22);
+    color: #ffd98d;
+    font-size: 0.86rem;
+    font-weight: 700;
 }
 
-.project-links a{
-    display:inline-flex;
-    margin-top:18px;
-    padding:10px 16px;
-    border-radius:8px;
-    text-decoration:none;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,0.04);
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
 }
 
-/* CONTACT */
+.roadmap-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    background: rgba(53,208,196,0.12);
+    border: 1px solid rgba(53,208,196,0.2);
+    color: #a4f2eb;
+    font-weight: 800;
+}
 
-.contact-band{
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:20px;
-    align-items:center;
-    padding:28px;
-    border-radius:8px;
-    border:1px solid var(--border);
+.contact-wrap {
+    padding-bottom: 88px;
+}
+
+.contact-band {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
     background:
         linear-gradient(135deg, rgba(53,208,196,0.12) 0%, rgba(240,181,74,0.08) 100%),
         rgba(255,255,255,0.04);
+    box-shadow: var(--shadow);
 }
 
-.link-row{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
+.contact-band p {
+    margin: 14px 0 0;
+    max-width: 62ch;
 }
 
-.link-row a{
-    padding:10px 16px;
-    border-radius:8px;
-    text-decoration:none;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,0.04);
+.link-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-/* FOOTER */
-
-.site-footer{
-    padding:0 0 44px;
-    color:var(--muted);
-    font-size:0.94rem;
+.site-footer {
+    padding: 0 0 44px;
+    color: var(--muted);
+    font-size: 0.94rem;
 }
 
-/* ANIMATION */
-
-html.js [data-reveal]{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity 0.7s ease, transform 0.7s ease;
+html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-html.js [data-reveal].revealed{
-    opacity:1;
-    transform:translateY(0);
+html.js [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* RESPONSIVE */
-
-@media (max-width:1080px){
-
+@media (max-width: 1080px) {
     .hero,
     .about-grid,
-    .contact-band{
-        grid-template-columns:1fr;
+    .contact-band {
+        grid-template-columns: 1fr;
     }
 
-    .detail-grid,
     .stack-grid,
     .projects-grid,
     .roadmap-grid,
-    .signals{
-        grid-template-columns:1fr;
+    .signals,
+    .detail-grid {
+        grid-template-columns: 1fr;
     }
 
-    .profile-image img{
-        width:280px;
-        height:280px;
-    }
-}
-
-@media (max-width:760px){
-
-    .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
+    .profile-image img {
+        width: 280px;
     }
 
-    .hero{
-        padding-bottom:68px;
-    }
-
-    .hero h1{
-        font-size:2.55rem;
-        max-width:none;
-    }
-
-    .hero-points{
-        grid-template-columns:1fr;
-    }
-
-    .profile-image img{
-        width:220px;
-        height:220px;
+    .link-row {
+        justify-content: flex-start;
     }
 }
 
-@media (max-width:520px){
+@media (max-width: 760px) {
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-nav {
+        width: 100%;
+    }
+
+    .hero {
+        padding-bottom: 68px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2.55rem;
+        max-width: none;
+    }
+
+    .hero-points {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image img {
+        width: 220px;
+    }
+
+    .section-heading h2,
+    .contact-band h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .shell {
+        width: min(var(--shell-width), calc(100% - 24px));
+    }
+
+    .site-header {
+        position: static;
+    }
 
     .button,
     .project-links a,
-    .link-row a{
-        width:100%;
+    .link-row a {
+        width: 100%;
+    }
+
+    .contact-band {
+        padding: 22px;
     }
 }
-
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header">
+    <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Temple Stephen home">
+            <span class="brand-mark">TS</span>
+            <span class="brand-text">
+                <strong>Temple Stephen</strong>
+                <span>Cloud &amp; DevOps Engineer</span>
+            </span>
+        </a>
 
-<div class="shell header-inner">
-
-<a class="brand" href="#">
-<span class="brand-mark">TS</span>
-
-<span class="brand-text">
-<strong>Temple Stephen</strong>
-<span>Cloud & DevOps Engineer</span>
-</span>
-</a>
-
-<nav class="site-nav">
-<a href="#about">About</a>
-<a href="#stack">Stack</a>
-<a href="#projects">Projects</a>
-<a href="#roadmap">Roadmap</a>
-<a href="#contact">Contact</a>
-</nav>
-
-</div>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#stack">Stack</a>
+            <a href="#projects">Projects</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-
-<section class="hero shell">
+<main id="main-content">
+<section class="hero shell" id="top">
 
 <div class="hero-copy" data-reveal>
+<p class="eyebrow">Cloud &amp; DevOps Engineer In Training</p>
 
-<p class="eyebrow">Cloud & DevOps Engineer In Training</p>
-
-<h1>
-Building practical cloud systems and cleaner deployment workflows.
-</h1>
+<h1>Building practical cloud systems and cleaner deployment workflows.</h1>
 
 <p class="lede">
 I am Temple Stephen. I am learning by shipping real work:
@@ -600,54 +693,36 @@ cloud and DevOps theory into dependable systems.
 </p>
 
 <div class="hero-actions">
-
-<a class="button button-primary"
-href="https://still-cake-4c67.temple-stephen100.workers.dev"
-target="_blank">
-
-View Live Site
-
-</a>
-
-<a class="button button-secondary"
-href="https://github.com/templestephen"
-target="_blank">
-
-GitHub Profile
-
-</a>
-
+<a class="button button-primary" href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank" rel="noopener noreferrer">View Live Site</a>
+<a class="button button-secondary" href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
 </div>
 
 <ul class="hero-points">
-
 <li>
-<strong>Cloud Focus</strong><br>
+<strong>Cloud Focus</strong>
 <span>Learning deployments, infrastructure, and operations.</span>
 </li>
 
 <li>
-<strong>Tooling</strong><br>
+<strong>Tooling</strong>
 <span>AWS, Cloudflare, Docker, GitHub, and web fundamentals.</span>
 </li>
 
 <li>
-<strong>Goal</strong><br>
+<strong>Goal</strong>
 <span>Grow into a production-ready DevOps engineer.</span>
 </li>
-
 </ul>
-
 </div>
 
 <div class="hero-visual" data-reveal>
-
-<div class="profile-image">
-<img src="website.png" alt="Temple Stephen">
+<div class="profile-frame">
+    <div class="profile-image">
+        <img src="website.png" alt="Temple Stephen">
+    </div>
 </div>
 
 <div class="terminal">
-
 <div class="window-bar">
 <span></span>
 <span></span>
@@ -655,9 +730,7 @@ GitHub Profile
 </div>
 
 <div class="terminal-body">
-
-<pre>
-$ deploy --target production
+<pre>$ deploy --target production
 
 source      GitHub
 container   Docker
@@ -665,12 +738,10 @@ edge        Cloudflare
 cloud       AWS
 status      learning by building
 </pre>
-
 </div>
 </div>
 
 <div class="signals">
-
 <article class="signal-card">
 <span class="signal-label">Current Focus</span>
 <strong>Deployment and Infrastructure</strong>
@@ -682,72 +753,61 @@ status      learning by building
 <strong>Public projects and practical learning</strong>
 <p>Using shipped systems to gain real-world experience.</p>
 </article>
-
 </div>
-
 </div>
 
 </section>
 
 <section class="section shell" id="about">
-
-<div class="section-heading" data-reveal">
+<div class="section-heading" data-reveal>
 <p class="eyebrow">About</p>
 <h2>Hands-on engineering, one shipped system at a time.</h2>
 </div>
 
 <div class="about-grid">
-
 <div class="about-copy" data-reveal>
-
 <p>
-I am building hands-on experience in cloud engineering,
-deployment, and automation.
+I am building hands-on experience in cloud engineering, deployment, and
+automation. My focus is not only on learning tools, but on understanding how
+systems behave when they need to be reliable, repeatable, and easy to manage.
 </p>
 
 <p>
-My focus is not only learning tools, but understanding how
-systems behave when they need to be reliable, repeatable,
-and easy to manage.
+Right now, I am strengthening the fundamentals that matter most: web delivery,
+containerization, cloud services, version control, and the discipline required
+to move from experiments to production-ready workflows.
 </p>
-
 </div>
 
 <div class="detail-grid" data-reveal>
-
-<div class="detail-card">
+<article class="detail-card">
 <h3>Reliable Delivery</h3>
-<p>Clear deployment paths and predictable environments.</p>
-</div>
+<p>Prefer clear deployment paths, predictable environments, and steps that can be repeated with confidence.</p>
+</article>
 
-<div class="detail-card">
+<article class="detail-card">
 <h3>Operational Thinking</h3>
-<p>Understanding how systems are built, shipped, and maintained.</p>
-</div>
+<p>Interested in how services are built, shipped, monitored, and improved after they go live.</p>
+</article>
 
-<div class="detail-card">
+<article class="detail-card">
 <h3>Continuous Growth</h3>
-<p>Using public projects to turn learning into real skill.</p>
+<p>Using public work and steady iteration to turn cloud and DevOps knowledge into applied skill.</p>
+</article>
 </div>
-
 </div>
-
-</div>
-
 </section>
 
 <section class="section shell" id="stack">
-
-<div class="section-heading">
+<div class="section-heading" data-reveal>
 <p class="eyebrow">Stack</p>
 <h2>Tools I am using and strengthening.</h2>
 </div>
 
 <div class="stack-grid">
-
-<article class="stack-card">
+<article class="stack-card" data-reveal>
 <h3>Web Foundation</h3>
-
+<p>Solid front-end basics for shipping clean interfaces and deployable web projects.</p>
 <ul class="chip-list">
 <li>HTML</li>
 <li>CSS</li>
@@ -755,9 +815,9 @@ and easy to manage.
 </ul>
 </article>
 
-<article class="stack-card">
+<article class="stack-card" data-reveal>
 <h3>Infrastructure</h3>
-
+<p>Cloud and hosting tools that support deployment, scaling, and operational practice.</p>
 <ul class="chip-list">
 <li>AWS</li>
 <li>Cloudflare</li>
@@ -765,180 +825,155 @@ and easy to manage.
 </ul>
 </article>
 
-<article class="stack-card">
+<article class="stack-card" data-reveal>
 <h3>Workflow</h3>
-
+<p>Versioned work, public iteration, and better habits around delivery and automation.</p>
 <ul class="chip-list">
 <li>GitHub</li>
 <li>Deployment</li>
 <li>Automation</li>
 </ul>
 </article>
-
 </div>
-
 </section>
 
 <section class="section shell" id="projects">
-
-<div class="section-heading">
+<div class="section-heading" data-reveal>
 <p class="eyebrow">Projects</p>
 <h2>Public work showing growth and direction.</h2>
 </div>
 
 <div class="projects-grid">
-
-<article class="project-card">
-
+<article class="project-card" data-reveal>
 <span class="project-tag">Featured Build</span>
-
 <h3>Portfolio Website</h3>
-
 <p>
 A personal website deployed on Cloudflare to practice hosting,
 delivery, and continual iteration.
 </p>
 
 <div class="project-links">
-<a href="https://still-cake-4c67.temple-stephen100.workers.dev"
-target="_blank">
-
-Open Live Site
-
-</a>
+<a href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank" rel="noopener noreferrer">Open Live Site</a>
 </div>
-
 </article>
 
-<article class="project-card">
-
+<article class="project-card" data-reveal>
 <span class="project-tag">Learning Hub</span>
-
 <h3>GitHub Projects</h3>
-
 <p>
 A public record of code, experiments, and steady progress
 across cloud and DevOps learning.
 </p>
 
 <div class="project-links">
-<a href="https://github.com/templestephen"
-target="_blank">
-
-View GitHub
-
-</a>
+<a href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">View GitHub</a>
 </div>
-
 </article>
-
 </div>
-
 </section>
 
 <section class="section shell" id="roadmap">
-
-<div class="section-heading">
+<div class="section-heading" data-reveal>
 <p class="eyebrow">Roadmap</p>
 <h2>The path toward production-ready execution.</h2>
 </div>
 
 <div class="roadmap-grid">
-
-<article class="roadmap-card">
+<article class="roadmap-card" data-reveal>
+<span class="roadmap-step">01</span>
 <h3>Strengthen the Core</h3>
 <p>Improve cloud concepts, deployment, and infrastructure fundamentals.</p>
 </article>
 
-<article class="roadmap-card">
+<article class="roadmap-card" data-reveal>
+<span class="roadmap-step">02</span>
 <h3>Automate More</h3>
 <p>Move toward repeatable workflows and better delivery discipline.</p>
 </article>
 
-<article class="roadmap-card">
+<article class="roadmap-card" data-reveal>
+<span class="roadmap-step">03</span>
 <h3>Operate with Confidence</h3>
 <p>Build dependable systems ready for real production ownership.</p>
 </article>
-
 </div>
-
 </section>
 
-<section class="section shell" id="contact">
-
-<div class="contact-band">
-
+<section class="contact-wrap shell" id="contact">
+<div class="contact-band" data-reveal>
 <div>
 <p class="eyebrow">Contact</p>
 <h2>Let’s connect.</h2>
-
 <p>
 The best way to reach me is by email or through GitHub and X.
 </p>
 </div>
 
 <div class="link-row">
-
-<a href="mailto:temple.stephen100@email.com">
-Email
-</a>
-
-<a href="https://github.com/templestephen" target="_blank">
-GitHub
-</a>
-
-<a href="https://x.com/temple_stephen1" target="_blank">
-X
-</a>
-
+<a href="mailto:temple.stephen100@email.com">Email</a>
+<a href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://x.com/temple_stephen1" target="_blank" rel="noopener noreferrer">X</a>
 </div>
-
 </div>
-
 </section>
-
 </main>
 
 <footer class="site-footer shell">
-<p>&copy; <span id="year"></span> Temple Stephen</p>
+<p>&copy; <span id="year"></span> Temple Stephen. Built for clear presentation and steady iteration.</p>
 </footer>
 
 <script>
-
 const revealItems = document.querySelectorAll("[data-reveal]");
+const navLinks = document.querySelectorAll(".site-nav a");
+const sections = document.querySelectorAll("section[id]");
 const yearNode = document.getElementById("year");
 
-if(yearNode){
+if (yearNode) {
     yearNode.textContent = new Date().getFullYear();
 }
 
-if("IntersectionObserver" in window){
-
+if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
-
         entries.forEach((entry) => {
-
-            if(!entry.isIntersecting) return;
+            if (!entry.isIntersecting) {
+                return;
+            }
 
             entry.target.classList.add("revealed");
             observer.unobserve(entry.target);
-
         });
-
+    }, {
+        threshold: 0.16,
+        rootMargin: "0px 0px -40px 0px"
     });
 
     revealItems.forEach((item) => {
         revealObserver.observe(item);
     });
-
-}else{
-
+} else {
     revealItems.forEach((item) => {
         item.classList.add("revealed");
     });
-
 }
 
+const updateActiveNav = () => {
+    const offset = window.scrollY + 140;
+    let currentId = "";
+
+    sections.forEach((section) => {
+        if (offset >= section.offsetTop) {
+            currentId = section.id;
+        }
+    });
+
+    navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${currentId}`;
+        link.classList.toggle("active", isActive);
+    });
+};
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+updateActiveNav();
 </script>
 
 </body>
