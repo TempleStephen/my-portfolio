@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Temple Stephen is a cloud and DevOps engineer in training, building hands-on experience with deployment, automation, and modern infrastructure.">
-<title>Temple Stephen | Cloud &amp; DevOps Engineer</title>
+<meta name="description" content="Temple Stephen is a Cloud & DevOps Engineer specializing in AWS, Docker, Jenkins, CI/CD pipelines, Linux, Cloudflare, and Infrastructure Automation.">
+<title>Temple Stephen | Cloud & DevOps Engineer • AWS • Docker • Jenkins</title>
 
 <script>
 document.documentElement.classList.add("js");
@@ -107,19 +107,6 @@ svg {
     text-decoration: none;
 }
 
-.brand-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(135deg, var(--accent) 0%, #78e2d8 100%);
-    color: #0d1112;
-    font-weight: 800;
-    font-size: 0.95rem;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
-}
-
 .brand-text {
     display: grid;
     gap: 2px;
@@ -164,7 +151,7 @@ main {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 36px;
     align-items: center;
-    padding: 52px 0 84px;
+    padding: 52px 0 60px;
     min-height: calc(100vh - 76px);
 }
 
@@ -191,8 +178,8 @@ main {
 }
 
 .hero h1 {
-    font-size: 3.7rem;
-    max-width: 12ch;
+    font-size: 3.4rem;
+    max-width: 14ch;
 }
 
 .hero-copy .lede,
@@ -202,7 +189,8 @@ main {
 .contact-band p,
 .stack-card p,
 .signal-card p,
-.detail-card p {
+.detail-card p,
+.skill-box p {
     color: var(--muted);
     font-size: 1.05rem;
 }
@@ -264,34 +252,6 @@ main {
     background: rgba(255,255,255,0.08);
 }
 
-.hero-points {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-}
-
-.hero-points li {
-    min-height: 112px;
-    padding: 18px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-}
-
-.hero-points strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.hero-points span {
-    color: var(--muted);
-    font-size: 0.94rem;
-}
-
 .hero-visual {
     display: grid;
     gap: 16px;
@@ -303,7 +263,9 @@ main {
 .project-card,
 .stack-card,
 .roadmap-card,
-.detail-card {
+.detail-card,
+.stat-card,
+.skill-box {
     background: linear-gradient(
         180deg,
         rgba(255,255,255,0.045) 0%,
@@ -318,23 +280,18 @@ main {
     padding: 24px;
 }
 
-.profile-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-image img {
+.profile-frame img {
     width: min(340px, 100%);
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
+    margin: 0 auto;
     border: 4px solid rgba(53,208,196,0.2);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     transition: transform 0.3s ease;
 }
 
-.profile-image img:hover {
+.profile-frame img:hover {
     transform: scale(1.03);
 }
 
@@ -381,26 +338,6 @@ main {
     white-space: pre-wrap;
 }
 
-.signals {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-}
-
-.signal-card {
-    min-height: 124px;
-    padding: 18px;
-}
-
-.signal-label {
-    display: block;
-    margin-bottom: 12px;
-    color: var(--warm);
-    font-size: 0.86rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 .section {
     padding: 40px 0 88px;
 }
@@ -438,7 +375,9 @@ main {
 .detail-grid,
 .stack-grid,
 .projects-grid,
-.roadmap-grid {
+.roadmap-grid,
+.skills-grid,
+.stats {
     display: grid;
     gap: 16px;
 }
@@ -450,14 +389,17 @@ main {
 .detail-card,
 .stack-card,
 .project-card,
-.roadmap-card {
+.roadmap-card,
+.stat-card,
+.skill-box {
     padding: 20px;
 }
 
 .detail-card h3,
 .stack-card h3,
 .project-card h3,
-.roadmap-card h3 {
+.roadmap-card h3,
+.skill-box h3 {
     margin: 0 0 10px;
     font-size: 1.1rem;
 }
@@ -468,7 +410,7 @@ main {
 }
 
 .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .chip-list {
@@ -585,12 +527,13 @@ html.js [data-reveal].revealed {
     .stack-grid,
     .projects-grid,
     .roadmap-grid,
-    .signals,
-    .detail-grid {
+    .detail-grid,
+    .skills-grid,
+    .stats {
         grid-template-columns: 1fr;
     }
 
-    .profile-image img {
+    .profile-frame img {
         width: 280px;
     }
 
@@ -610,20 +553,16 @@ html.js [data-reveal].revealed {
     }
 
     .hero {
-        padding-bottom: 68px;
+        padding-bottom: 48px;
         min-height: auto;
     }
 
     .hero h1 {
-        font-size: 2.55rem;
+        font-size: 2.4rem;
         max-width: none;
     }
 
-    .hero-points {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-image img {
+    .profile-frame img {
         width: 220px;
     }
 
@@ -652,6 +591,92 @@ html.js [data-reveal].revealed {
         padding: 22px;
     }
 }
+
+/* ===== Version 2.0 additions ===== */
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent) 0%, #78e2d8 100%);
+    color: #081112;
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.hero-badges span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(53,208,196,0.12);
+    border: 1px solid rgba(53,208,196,0.25);
+    color: #84fff2;
+    font-size: 0.88rem;
+}
+
+.stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0 0 20px;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin: 0 0 8px;
+    font-weight: 800;
+}
+
+.stat-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.skill-box {
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-6px);
+    border-color: rgba(53,208,196,0.3);
+}
+
+.skill-box h3 {
+    color: var(--accent);
+}
+
+.skill-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-box li {
+    padding: 8px 0;
+    color: #d5dede;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.96rem;
+}
+
+.skill-box li:last-child {
+    border-bottom: none;
+}
 </style>
 </head>
 
@@ -661,19 +686,20 @@ html.js [data-reveal].revealed {
 <header class="site-header">
     <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="Temple Stephen home">
-            <span class="brand-mark">TS</span>
+            <span class="brand-logo">TS</span>
             <span class="brand-text">
                 <strong>Temple Stephen</strong>
-                <span>Cloud &amp; DevOps Engineer</span>
+                <span>Cloud • DevOps • AWS</span>
             </span>
         </a>
 
         <nav class="site-nav" aria-label="Primary navigation">
             <a href="#about">About</a>
-            <a href="#stack">Stack</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#contact">Contact</a>
+            <a href="https://github.com/TempleStephen" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
     </div>
 </header>
@@ -682,44 +708,37 @@ html.js [data-reveal].revealed {
 <section class="hero shell" id="top">
 
 <div class="hero-copy" data-reveal>
-<p class="eyebrow">Cloud &amp; DevOps Engineer In Training</p>
+<p class="eyebrow">Available for remote Cloud &amp; DevOps opportunities</p>
 
-<h1>Building practical cloud systems and cleaner deployment workflows.</h1>
+<h1>Cloud &amp; DevOps Engineer building production-ready AWS infrastructure.</h1>
 
 <p class="lede">
-I am Temple Stephen. I am learning by shipping real work:
-deploying projects, improving infrastructure habits, and turning
-cloud and DevOps theory into dependable systems.
+I'm Temple Stephen. I build hands-on cloud systems using AWS, Docker, Jenkins,
+CI/CD pipelines, and infrastructure automation — turning DevOps theory into
+deployments that actually hold up.
 </p>
 
 <div class="hero-actions">
-<a class="button button-primary" href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank" rel="noopener noreferrer">View Live Site</a>
-<a class="button button-secondary" href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+<a class="button button-primary" href="#projects">View My Projects</a>
+<a class="button button-secondary" href="https://github.com/TempleStephen" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="button button-secondary" href="Temple Stephen AWS Cloud DevOps CV .pdf" download>Download Resume</a>
 </div>
 
-<ul class="hero-points">
-<li>
-<strong>Cloud Focus</strong>
-<span>Learning deployments, infrastructure, and operations.</span>
-</li>
-
-<li>
-<strong>Tooling</strong>
-<span>AWS, Cloudflare, Docker, GitHub, and web fundamentals.</span>
-</li>
-
-<li>
-<strong>Goal</strong>
-<span>Grow into a production-ready DevOps engineer.</span>
-</li>
-</ul>
+<div class="hero-badges">
+<span>AWS</span>
+<span>Docker</span>
+<span>Jenkins</span>
+<span>Terraform</span>
+<span>Nginx</span>
+<span>Linux</span>
+<span>Cloudflare</span>
+<span>GitHub Actions</span>
+</div>
 </div>
 
 <div class="hero-visual" data-reveal>
 <div class="profile-frame">
-    <div class="profile-image">
-        <img src="website.png" alt="Temple Stephen">
-    </div>
+<img src="website.png" alt="Temple Stephen">
 </div>
 
 <div class="terminal">
@@ -730,110 +749,136 @@ cloud and DevOps theory into dependable systems.
 </div>
 
 <div class="terminal-body">
-<pre>$ deploy --target production
+<pre>$ git push origin main
 
-source      GitHub
-container   Docker
-edge        Cloudflare
-cloud       AWS
-status      learning by building
-</pre>
+✓ Jenkins Pipeline Triggered
+✓ Docker Image Built
+✓ Green Environment Deployed
+✓ Health Check Passed
+✓ Nginx Switched Traffic
+
+Deployment Successful</pre>
 </div>
 </div>
+</div>
 
-<div class="signals">
-<article class="signal-card">
-<span class="signal-label">Current Focus</span>
-<strong>Deployment and Infrastructure</strong>
-<p>Building stronger foundations with repeatable workflows.</p>
+</section>
+
+<section class="stats shell" data-reveal>
+<article class="stat-card">
+<h2>5+</h2>
+<p>Hands-on cloud &amp; DevOps projects</p>
 </article>
 
-<article class="signal-card">
-<span class="signal-label">Working Style</span>
-<strong>Public projects and practical learning</strong>
-<p>Using shipped systems to gain real-world experience.</p>
+<article class="stat-card">
+<h2>AWS</h2>
+<p>Cloud infrastructure &amp; networking</p>
 </article>
-</div>
-</div>
 
+<article class="stat-card">
+<h2>CI/CD</h2>
+<p>Jenkins • Docker • Nginx automation</p>
+</article>
+
+<article class="stat-card">
+<h2>100%</h2>
+<p>Portfolio projects built &amp; deployed</p>
+</article>
 </section>
 
 <section class="section shell" id="about">
 <div class="section-heading" data-reveal>
 <p class="eyebrow">About</p>
-<h2>Hands-on engineering, one shipped system at a time.</h2>
+<h2>Cloud engineer focused on automation, reliability, and continuous delivery.</h2>
 </div>
 
 <div class="about-grid">
 <div class="about-copy" data-reveal>
 <p>
-I am building hands-on experience in cloud engineering, deployment, and
-automation. My focus is not only on learning tools, but on understanding how
-systems behave when they need to be reliable, repeatable, and easy to manage.
+I'm Temple Stephen, a Cloud &amp; DevOps Engineer building practical cloud
+infrastructure with AWS, Docker, Jenkins, Linux, Cloudflare, GitHub, and
+Infrastructure as Code.
 </p>
 
 <p>
-Right now, I am strengthening the fundamentals that matter most: web delivery,
-containerization, cloud services, version control, and the discipline required
-to move from experiments to production-ready workflows.
+Rather than only studying DevOps, I build real-world projects that simulate
+production environments, automate deployments, and improve application
+reliability.
+</p>
+
+<p>
+My current focus is becoming a production-ready Cloud &amp; DevOps Engineer by
+building scalable deployment pipelines and infrastructure automation.
 </p>
 </div>
 
 <div class="detail-grid" data-reveal>
 <article class="detail-card">
-<h3>Reliable Delivery</h3>
-<p>Prefer clear deployment paths, predictable environments, and steps that can be repeated with confidence.</p>
+<h3>Cloud Infrastructure</h3>
+<p>AWS EC2, IAM, VPC, S3, Cloudflare and networking fundamentals.</p>
 </article>
 
 <article class="detail-card">
-<h3>Operational Thinking</h3>
-<p>Interested in how services are built, shipped, monitored, and improved after they go live.</p>
+<h3>CI/CD Automation</h3>
+<p>Jenkins pipelines, Docker builds, health checks, and zero-downtime deployments.</p>
 </article>
 
 <article class="detail-card">
-<h3>Continuous Growth</h3>
-<p>Using public work and steady iteration to turn cloud and DevOps knowledge into applied skill.</p>
+<h3>Linux &amp; Containers</h3>
+<p>Ubuntu, Nginx, Docker Compose, GitHub workflows, and deployment scripting.</p>
 </article>
 </div>
 </div>
 </section>
 
-<section class="section shell" id="stack">
+<section class="section shell" id="skills">
 <div class="section-heading" data-reveal>
-<p class="eyebrow">Stack</p>
-<h2>Tools I am using and strengthening.</h2>
+<p class="eyebrow">Tech stack</p>
+<h2>Technologies I use to build cloud infrastructure.</h2>
 </div>
 
-<div class="stack-grid">
-<article class="stack-card" data-reveal>
-<h3>Web Foundation</h3>
-<p>Solid front-end basics for shipping clean interfaces and deployable web projects.</p>
-<ul class="chip-list">
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
+<div class="skills-grid" data-reveal>
+<div class="skill-box">
+<h3>Cloud</h3>
+<ul>
+<li>AWS EC2</li>
+<li>IAM</li>
+<li>VPC</li>
+<li>S3</li>
+<li>Cloudflare Pages</li>
 </ul>
-</article>
+</div>
 
-<article class="stack-card" data-reveal>
-<h3>Infrastructure</h3>
-<p>Cloud and hosting tools that support deployment, scaling, and operational practice.</p>
-<ul class="chip-list">
-<li>AWS</li>
-<li>Cloudflare</li>
+<div class="skill-box">
+<h3>DevOps</h3>
+<ul>
 <li>Docker</li>
+<li>Jenkins</li>
+<li>Nginx</li>
+<li>CI/CD pipelines</li>
+<li>GitHub Actions</li>
 </ul>
-</article>
+</div>
 
-<article class="stack-card" data-reveal>
-<h3>Workflow</h3>
-<p>Versioned work, public iteration, and better habits around delivery and automation.</p>
-<ul class="chip-list">
+<div class="skill-box">
+<h3>Operating system</h3>
+<ul>
+<li>Ubuntu Linux</li>
+<li>Bash</li>
+<li>Git</li>
 <li>GitHub</li>
-<li>Deployment</li>
-<li>Automation</li>
 </ul>
-</article>
+</div>
+
+<div class="skill-box">
+<h3>Currently learning</h3>
+<ul>
+<li>Terraform</li>
+<li>Kubernetes</li>
+<li>Ansible</li>
+<li>AWS Solutions Architecture</li>
+</ul>
+</div>
 </div>
 </section>
 
@@ -844,31 +889,74 @@ to move from experiments to production-ready workflows.
 </div>
 
 <div class="projects-grid">
+
 <article class="project-card" data-reveal>
-<span class="project-tag">Featured Build</span>
-<h3>Portfolio Website</h3>
+<span class="project-tag">CI/CD Pipeline</span>
+<h3>Jenkins Blue-Green CI/CD</h3>
 <p>
-A personal website deployed on Cloudflare to practice hosting,
-delivery, and continual iteration.
+Zero-downtime deployment pipeline: GitHub triggers Jenkins, which builds a
+Docker image and switches traffic between blue and green environments on
+AWS EC2 behind Nginx, with a browser-based deployment dashboard for
+tracking each release.
 </p>
 
 <div class="project-links">
-<a href="https://still-cake-4c67.temple-stephen100.workers.dev" target="_blank" rel="noopener noreferrer">Open Live Site</a>
+<a href="https://github.com/TempleStephen/jenkins-blue-green-cicd" target="_blank" rel="noopener noreferrer">View Repo</a>
 </div>
 </article>
 
 <article class="project-card" data-reveal>
-<span class="project-tag">Learning Hub</span>
-<h3>GitHub Projects</h3>
+<span class="project-tag">Full-Stack Deployment</span>
+<h3>AWS 3-Tier Task Manager</h3>
 <p>
-A public record of code, experiments, and steady progress
-across cloud and DevOps learning.
+A Flask + PostgreSQL task manager deployed across a classic 3-tier
+architecture, with Nginx handling the web tier on AWS EC2.
 </p>
 
 <div class="project-links">
-<a href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">View GitHub</a>
+<a href="https://github.com/TempleStephen/aws-3tier-task-manager" target="_blank" rel="noopener noreferrer">View Repo</a>
 </div>
 </article>
+
+<article class="project-card" data-reveal>
+<span class="project-tag">Serverless / IoT</span>
+<h3>Home Energy Monitor</h3>
+<p>
+A serverless AWS pipeline that ingests IoT sensor data to track home
+energy usage in near real time, without managing any servers.
+</p>
+
+<div class="project-links">
+<a href="https://github.com/TempleStephen/home-energy-monitor" target="_blank" rel="noopener noreferrer">View Repo</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
+<span class="project-tag">Serverless</span>
+<h3>Serverless Image Processing</h3>
+<p>
+An event-driven image processing system that automatically transforms
+and stores uploaded images using serverless AWS components.
+</p>
+
+<div class="project-links">
+<a href="https://github.com/TempleStephen/serverless-image-processing" target="_blank" rel="noopener noreferrer">View Repo</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
+<span class="project-tag">Static Hosting</span>
+<h3>AWS CI/CD Static Website</h3>
+<p>
+A static website hosted on S3 with an automated deployment pipeline
+built on GitHub Actions, so every push ships straight to production.
+</p>
+
+<div class="project-links">
+<a href="https://github.com/TempleStephen/Aws-cicd-static-website" target="_blank" rel="noopener noreferrer">View Repo</a>
+</div>
+</article>
+
 </div>
 </section>
 
@@ -903,7 +991,7 @@ across cloud and DevOps learning.
 <div class="contact-band" data-reveal>
 <div>
 <p class="eyebrow">Contact</p>
-<h2>Let’s connect.</h2>
+<h2>Let's connect.</h2>
 <p>
 The best way to reach me is by email or through GitHub and X.
 </p>
@@ -911,7 +999,7 @@ The best way to reach me is by email or through GitHub and X.
 
 <div class="link-row">
 <a href="mailto:temple.stephen100@email.com">Email</a>
-<a href="https://github.com/templestephen" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://github.com/TempleStephen" target="_blank" rel="noopener noreferrer">GitHub</a>
 <a href="https://x.com/temple_stephen1" target="_blank" rel="noopener noreferrer">X</a>
 </div>
 </div>
