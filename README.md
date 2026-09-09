@@ -209,9 +209,11 @@ I’m particularly interested in opportunities involving:
 
 # 📄 Resume
 
-My current Cloud & DevOps CV is available in this repository.
+Interested in my Cloud & DevOps background?
 
-📥 **Temple Stephen AWS Cloud DevOps CV**
+📥 **[View / Download My Cloud & DevOps CV](./Temple%20Stephen%20AWS%20Cloud%20DevOps%20CV%20.pdf)**
+
+My CV includes my technical skills, hands-on projects, professional experience, and Cloud & DevOps career focus.
 
 ---
 
